@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: 'Satoshi';
-	src: url('/fonts/Satoshi-Variable.ttf');
+	font-family: 'Times New Roman';
+	src: url('/fonts/times-new-roman.ttf');
 	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
-	font-family: 'Satoshi';
-	src: url('/fonts/Satoshi-VariableItalic.ttf');
+	font-family: 'Times New Roman';
+	src: url('/fonts/times-new-roman-italic.ttf');
 	font-style: italic;
 	font-display: swap;
 }
@@ -70,3 +70,21 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+.scrollable-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem; /* Adjust as needed */
+	overflow-x: auto;
+	white-space: nowrap;
+  }
+  
+  @media (min-width: 640px) { /* sm breakpoint */
+	.scrollable-container {
+	  flex-direction: row;
+	  gap: 0 1rem; /* Adjust as needed */
+	}
+	.scrollable-item {
+		min-width: 250px;
+	}
+  }

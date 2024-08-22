@@ -5,50 +5,22 @@ import Card from '../components/Card.astro'
 import ProjectCard from '../components/ProjectCard.astro'
 import Label from '../components/Label.astro'
 import SkillLayout from '../components/SkillLayout.astro'
-import PostPreview from '@/components/blog/PostPreview.astro'
 
-import { Image } from 'astro:assets'
-import astro from '../assets/about-astro.png'
+const languages = ['Cantonese (native)','English (fluent)','Mandarin (fluent)']
+const frontend = ['React', 'Astro', 'Vite', 'CSS']
+const backend = ['Node', 'Next']
+const programming = ['C', 'Python', 'C++',  'Javascript', 'Typescript', 'PHP', 'Java']
+const others = ['Git', 'Docker', 'MongoDB', 'PostgreSQL']
 
-import { getAllPosts, sortMDByDate } from '@/utils'
-
-const languages = ['lorem', 'ipsum']
-const frontend = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
-const backend = ['lorem', 'ipsum', 'lorem', 'ipsum']
-const others = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
-
-const MAX_POSTS = 10
-const allPosts = await getAllPosts()
-const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 ---
 
 <PageLayout meta={{ title: 'Home' }}>
 	<div class='flex w-full flex-col gap-y-10'>
 		<section class='flex flex-col items-center gap-y-7'>
-			<Image
-				src={astro}
-				alt='profile photo'
-				class='h-28 w-auto rounded-full bg-[#FFBE98] p-2'
-				loading='eager'
-			/>
-
 			<div class='flex flex-col items-center gap-y-4'>
-				<h1 class='text-3xl font-bold'>Lorem ipsum dolor</h1>
-				<a
-					href='https://github.com/srleom/astro-theme-resume.git'
-					class='flex flex-row items-center gap-x-3 rounded-3xl border border-input px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md'
-				>
-					<span class='relative flex items-center justify-center'>
-						<span
-							class='absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75'
-						></span>
-						<span class='relative inline-flex h-2 w-2 rounded-full bg-green-400'></span>
-					</span>
-
-					<p class='font-medium'>Get free template</p>
-				</a>
+				<h1 class='text-3xl font-bold'>YU Wing Ching, Winnie</h1>
 				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
-					<Label title='Lorem Ipsum'>
+					<Label title='Student'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
 								fill='currentColor'
@@ -56,7 +28,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 							></path></svg
 						>
 					</Label>
-					<Label title='Ipsum'>
+					<Label title='Hong Kong'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
 								fill='currentColor'
@@ -67,7 +39,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					<Label
 						title='Connect on Linkedin'
 						as='a'
-						href='https://www.linkedin.com/in/example/'
+						href='https://www.linkedin.com/in/winnie-yu-b137242b6/'
 						target='_blank'
 					>
 						<svg
@@ -87,130 +59,107 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 		<Section title='About'>
 			<p class='text-muted-foreground'>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis atque quia omnis
-				consectetur, voluptas praesentium veniam blanditiis ratione asperiores accusantium laborum
-				odit commodi quis deserunt incidunt et dolor iure ut! Lorem ipsum dolor sit, amet
-				consectetur adipisicing elit. Alias quia, doloribus ut beatae perspiciatis voluptatibus.
+				Final year undergraduate student majoring in Computer Science<br/>
+				With passion for web development, my career path is currently focused on becoming a frontend developer <br/>
+				Also interested in the field of networking and security, for example solving CTF <a href="https://play.picoctf.org/users/ame2024/" target="_blank" class="underline">(Capture The Flag)</a> <br/>
 			</p>
 		</Section>
-		{
-			allPostsByDate.length > 0 && (
-				<Section title='Posts'>
-					<ul class='flex flex-col gap-y-2'>
-						{allPostsByDate.map((p) => (
-							<li class='flex flex-col gap-x-2 sm:flex-row'>
-								<PostPreview post={p} />
-							</li>
-						))}
-					</ul>
-				</Section>
-			)
-		}
+		
+		<Section title='Education'>
+			<Card
+				heading='BSc in Computer Science'
+				subheading='The Chinese University of Hong Kong'
+				date='2021 - Present'>
+				<ul class='list-disc text-muted-foreground'>
+					Relevant Courses: Software Engineering, Open-source Software Project Development
+				</ul>
+			</Card>
+		</Section>
 
 		<Section title='Experience'>
 			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
+				heading='Software Development Summer Internship'
+				subheading='Knowledge & Education Exchange Platform (KEEP) project under CUHK'
+				date='May - Aug 2024'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
 					<li>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-						molestiae laboriosam pariatur!
-
-						<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
-					</li>
+					<u>Design and Implementation: </u><ul>
+					<li>Initiated the design
+						<a href="https://www.figma.com/proto/FeW2oc2PMC8pVpkcZUC4E7/Minimal-Web?node-id=1443-122096&t=kTzT0qtIk0UgOsSe-1&scaling=min-zoom&content-scaling=fixed&page-id=1350%3A109720&starting-point-node-id=1443%3A122096&show-proto-sidebar=1"  class='underline'>
+							(Figma)</a> and development of the web interface for VeriGuide.</li>
+					<li>Utilized frontend package, <a href="https://minimals.cc/" class='underline'>Minimal</a>, with React, Material UI and Vite to build the web interface.</li>
+					</ul></li>
+					<li><u>Research and Evaluation:</u><ul>
+					<li>Conducted comprehensive research on Retrieval-Augmented Generation (RAG) techniques and Large Language Models (LLMs).</li>
+					<li>Evaluated the performance of RAG applications using quantitative metrics. </li>
+					</ul></li>
 				</ul>
 			</Card>
 			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
-			/>
-		</Section>
-
-		<Section title='Education'>
-			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
+				heading='Summer Intern - Software Engineer'
+				subheading='Asta Systems Ltd.'
+				date='June - Aug 2023'
 			>
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-						molestiae laboriosam pariatur!
-
-						<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
-					</li>
-				</ul>
-			</Card>
-			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
-			/>
+			<ul class='ml-4 list-disc text-muted-foreground'>
+				<li>
+					<u>Creativity and Technical skills:</u>
+					<ul><li> Built six distinct websites. Engaged in the aesthetic design of the user interface </li>
+						<li>Implementated with XML, HTML5 and CSS3 programing.</li></ul>
+				</li>
+				<li>
+					<u>Customer Relationship Management:</u>
+					<ul><li>Demonstrated four distinct ERP system. Constantly gathered feedback from customers. 
+					</li><li>Facilitated communication between clients and mainland colleagues throughout projects.
+						</li></ul></li>
+				</li>
+			</ul></Card>
 		</Section>
 
 		<Section title='Projects'>
-			<div class='flex flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
+			<div class='scrollable-container flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
 				<ProjectCard
-					href='https://www.google.com'
-					heading='Consectetur'
-					subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-					imagePath='/src/assets/coming-soon.png'
-					altText='Example'
-					class='w-full sm:w-1/2'
+					href='/'
+					heading='Resume'
+					subheading='Side Project: My personal website'
+					imagePath='/src/assets/investigate.png'
+					altText=''
+					skills={['Astro', 'Tailwind']}
+					class=' scrollable-item'
+				/>
+				<ProjectCard
+					href='https://lantana-hk.company.site/'
+					heading='Ecommerce'
+					subheading='Build for my friend :)'
+					imagePath='/src/assets/lantana.jpg'
+					altText=''
+					class=' scrollable-item'
+				/>
+				<ProjectCard 
+					href='https://github.com/winniewcyu/gobang_easy'
+					heading='Gobang'
+					subheading='CSCI3100: PvM Gobang Game'
+					imagePath='/src/assets/image.png'
+					altText=''
+					skills={['React', 'Node', 'MongoDB']}
+					class=' scrollable-item'
 				/>
 				<ProjectCard
 					as='div'
 					heading='Coming soon...'
 					subheading=''
-					imagePath='/src/assets/coming-soon.png'
+					imagePath='/src/assets/image.gif'
 					altText='Lorem, ipsum dolor sit'
-					class='w-full sm:w-1/2'
+					class=' scrollable-item'
 				/>
 			</div>
-		</Section>
-
-		<Section title='Certifications'>
-			<Card
-				as='a'
-				heading='Lorem ipsum, dolor sit amet consectetur adipisicing.'
-				subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dicta magni consequuntur corrupti.'
-				date='Mar 2024 - Mar 2024'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-11 w-auto md:-left-16'
-				href='https://www.google.com'
-			/>
-			<Card
-				as='a'
-				heading='Lorem ipsum, dolor sit amet'
-				subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dicta.'
-				date='Mar 2029 - Mar 2032'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-11 w-auto md:-left-16'
-				href='https://www.google.com'
-			/>
 		</Section>
 
 		<Section title='Skills'>
 			<SkillLayout title='Languages' skills={languages} />
 			<SkillLayout title='Frontend' skills={frontend} />
 			<SkillLayout title='Backend' skills={backend} />
+			<SkillLayout title='Programming Language' skills={programming} />
 			<SkillLayout title='Others' skills={others} />
 		</Section>
 	</div>
@@ -225,6 +174,6 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			<span class='relative inline-flex h-2 w-2 rounded-full bg-green-400'></span>
 		</span>
 
-		<p class='font-medium'>Get free template</p>
+		<p class='font-medium'>Astro Resume Template Here</p>
 	</a>
 </PageLayout>
