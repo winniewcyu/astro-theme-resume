@@ -11,6 +11,21 @@ import icon from 'astro-icon'
 
 import vercel from '@astrojs/vercel/serverless'
 
+// // https://astro.build/config
+// export default defineConfig({
+//   integrations: [
+//   // Enable Preact to support Preact JSX components.
+//   preact(),
+//   // Enable React for the Algolia search component.
+//   react(), tailwind()],
+//   site: `https://winniewcyu.github.io/`,
+//   output: 'static',
+//   outDir: './docs',
+//   build: {
+//     assets: 'astro'
+//   }
+// });
+
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://winniewcyu.github.io/',
