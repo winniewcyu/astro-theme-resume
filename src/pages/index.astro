@@ -6,28 +6,20 @@ import ProjectCard from '../components/ProjectCard.astro'
 import Label from '../components/Label.astro'
 import SkillLayout from '../components/SkillLayout.astro'
 
-const languages = ['Cantonese (native)','English (fluent)','Mandarin (fluent)']
+const languages = ['Cantonese (native)','English (fluent)','Mandarin (fluent)', 'Japanese (basic)', 'French (learning)']
 const frontend = ['React', 'Astro', 'Vite', 'CSS']
-const backend = ['Node', 'Next']
+const backend = ['Node', 'Next', 'FastAPI']
 const programming = ['C', 'Python', 'C++',  'Javascript', 'Typescript', 'PHP', 'Java']
-const others = ['Git', 'Docker', 'MongoDB', 'PostgreSQL']
+const others = ['Git', 'Docker','Figma', 'MongoDB']
 
 ---
 
-<PageLayout meta={{ title: 'Home' }}>
+<PageLayout meta={{ title: 'Resume' }}>
 	<div class='flex w-full flex-col gap-y-10'>
 		<section class='flex flex-col items-center gap-y-7'>
 			<div class='flex flex-col items-center gap-y-4'>
 				<h1 class='text-3xl font-bold'>YU Wing Ching, Winnie</h1>
 				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
-					<Label title='Student'>
-						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
-							><path
-								fill='currentColor'
-								d='M4.615 20q-.69 0-1.152-.462Q3 19.075 3 18.385v-9.77q0-.69.463-1.152Q3.925 7 4.615 7H9V5.615q0-.69.463-1.152Q9.925 4 10.615 4h2.77q.69 0 1.153.463q.462.462.462 1.152V7h4.385q.69 0 1.152.463q.463.462.463 1.152v9.77q0 .69-.462 1.152q-.463.463-1.153.463zm0-1h14.77q.23 0 .423-.192q.192-.193.192-.423v-9.77q0-.23-.192-.423Q19.615 8 19.385 8H4.615q-.23 0-.423.192Q4 8.385 4 8.615v9.77q0 .23.192.423q.193.192.423.192M10 7h4V5.615q0-.23-.192-.423Q13.615 5 13.385 5h-2.77q-.23 0-.423.192q-.192.193-.192.423zM4 19V8z'
-							></path></svg
-						>
-					</Label>
 					<Label title='Hong Kong'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
@@ -59,17 +51,17 @@ const others = ['Git', 'Docker', 'MongoDB', 'PostgreSQL']
 
 		<Section title='About'>
 			<p class='text-muted-foreground'>
-				Final year undergraduate student majoring in Computer Science<br/>
-				With passion for web development, my career path is currently focused on becoming a frontend developer <br/>
-				Also interested in the field of networking and security, for example solving CTF <a href="https://play.picoctf.org/users/ame2024/" target="_blank" class="underline">(Capture The Flag)</a> <br/>
-			</p>
+				Frontend Developer passionate about building engaging mobile and web applications.<br/>
+				Seeking a junior role to contribute to projects by tackling challenging, innovative features. <br/>
+				Eager to deepen my expertise in frontend development. <br/>
+				I believe that effective communication is essential for ensuring information clarity and fostering strong teamwork.</p>
 		</Section>
 		
 		<Section title='Education'>
 			<Card
 				heading='BSc in Computer Science'
 				subheading='The Chinese University of Hong Kong'
-				date='2021 - Present'>
+				date='2021 - 2025'>
 				<ul class='list-disc text-muted-foreground'>
 					Relevant Courses: Software Engineering, Open-source Software Project Development
 				</ul>
@@ -77,6 +69,22 @@ const others = ['Git', 'Docker', 'MongoDB', 'PostgreSQL']
 		</Section>
 
 		<Section title='Experience'>
+			<Card
+				heading='Part-time Software Engineer '
+				subheading='AppicIDEA IT Solutions Limited'
+				date='Sep 2024 - Mar 2025'
+			>
+				<ul class='ml-4 list-disc text-muted-foreground'>
+					<li>
+					<u>Mobile Application Development: </u><ul>
+					<li>Contributed to two projects, developing frontend with React Native. </li>
+					<li>Independently implemented features based on Figma designs while integrating backend endpoints.</li>
+					</ul></li>
+					<li><u>Code Optimization & Best Practices:</u><ul>
+					<li>Enhanced code efficiency by eliminating redundancy and modularizing reusable components for scalability and maintainability. </li>
+					</ul></li>
+				</ul>
+			</Card>
 			<Card
 				heading='Software Development Summer Internship'
 				subheading='Knowledge & Education Exchange Platform (KEEP) project under CUHK'
@@ -101,23 +109,42 @@ const others = ['Git', 'Docker', 'MongoDB', 'PostgreSQL']
 				subheading='Asta Systems Ltd.'
 				date='June - Aug 2023'
 			>
-			<ul class='ml-4 list-disc text-muted-foreground'>
-				<li>
-					<u>Creativity and Technical skills:</u>
-					<ul><li> Built six distinct websites. Engaged in the aesthetic design of the user interface </li>
-						<li>Implementated with XML, HTML5 and CSS3 programing.</li></ul>
-				</li>
-				<li>
-					<u>Customer Relationship Management:</u>
-					<ul><li>Demonstrated four distinct ERP system. Constantly gathered feedback from customers. 
-					</li><li>Facilitated communication between clients and mainland colleagues throughout projects.
-						</li></ul></li>
-				</li>
-			</ul></Card>
+				<ul class='ml-4 list-disc text-muted-foreground'>
+					<li>
+						<u>Creativity and Technical skills:</u>
+						<ul><li> Built six distinct websites. Engaged in the aesthetic design of the user interface </li>
+							<li>Implementated with XML, HTML5 and CSS3 programing.</li></ul>
+					</li>
+					<li>
+						<u>Customer Relationship Management:</u>
+						<ul><li>Demonstrated four distinct ERP system. Constantly gathered feedback from customers. 
+						</li><li>Facilitated communication between clients and mainland colleagues throughout projects.
+						</li></ul>
+					</li>
+				</ul>
+			</Card>
 		</Section>
 
 		<Section title='Projects'>
-			<div class='scrollable-container flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
+			<div class='scrollable-container flex-row gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
+				<ProjectCard
+					href='/fyp'
+					heading='FYP'
+					subheading='Final Year Project'
+					imagePath='/src/assets/coming-soon.png'
+					altText=''
+					skills={['LLM', 'RAG']}
+					class='scrollable-item'
+				/>
+				<ProjectCard
+					href='https://github.com/winniewcyu/Simple-Compiler'
+					heading='Compiler'
+					subheading='CSCI3120: Compiler'
+					imagePath='/src/assets/compiler.png'
+					altText=''
+					skills={['python', 'Context Free Grammar']}
+					class=' scrollable-item'
+				/>
 				<ProjectCard
 					href='/'
 					heading='Resume'
@@ -143,15 +170,6 @@ const others = ['Git', 'Docker', 'MongoDB', 'PostgreSQL']
 					imagePath='/src/assets/image.png'
 					altText=''
 					skills={['React', 'Node', 'MongoDB']}
-					class=' scrollable-item'
-				/>
-				<ProjectCard
-					as='div'
-					heading='Coming soon...'
-					subheading=''
-					imagePath='/src/assets/image.gif'
-					altText=''
-					skills={[]}
 					class=' scrollable-item'
 				/>
 			</div>

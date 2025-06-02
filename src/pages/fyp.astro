@@ -1,0 +1,60 @@
+---
+import PageLayout from '../layouts/BaseLayout.astro'
+import Section from '../components/Section.astro'
+import Button from '../components/Button.astro'
+---
+
+<PageLayout meta={{ title: 'FYP' }}>
+	<div class='flex w-full flex-col gap-y-10'>
+		<section class='flex flex-col items-center gap-y-7'>
+				<h1 class='text-3xl font-bold'>Welcome to my FYP page</h1>
+		</section>
+
+		<Section title='About'>
+			<p class='text-muted-foreground'>
+			This project focuses on the development of an advanced RAG system aimed at significantly improving question-answering accuracy. Following a comprehensive evaluation of system advancements, application has been deployed to demonstrate the effect of these advancements.
+            <br/>  
+            For system perspective, a comprehensive research methodology is employed, encompassing a thorough literature review, implementation of diverse approaches, and rigorous evaluation of these methods. By addressing the limitations of traditional naive RAG systems, this study explores innovative strategies to elevate the performance of question-answering mechanisms. 
+            <br/>
+            Beyond system development, applications were built upon this integrated framework, incorporating functionalities such as a general chatbot, document-based conversational capabilities, and resume screening functionality. 
+            <br/>
+            Furthermore, this project serves as a culmination of my academic journey, integrating foundational knowledge in computer science to demonstrate practical applications and problem-solving methodologies acquired over the past four years.	
+            </p>
+		</Section>
+
+        <Section title='Details'>
+            <p class='text-muted-foreground'>
+            The RAG system developed has been integrated with Pre-retrieval, Chain-of Thought (CoT), and Retrieval Interleaved Generation (RIG) methods.
+            <br/>
+            After evaluating the performance of these methods with CRAG benchmarking, the system was deployed to demonstrate the imporvements on question-answering accuracy.
+            <img src="/images/result.png" alt="fyp" class="" />
+            Application built on this framework offers two primary pages, each addressing distinct use cases: 
+            <ul class='ml-4 list-disc text-muted-foreground'>
+					<li>
+					<u>Chatbot Page</u><ul>
+					<li>This interface enables users to engage with the chatbot, with or without document uploads. </li>
+					</ul></li>
+					<li><u>Resume Screening Page</u><ul>
+					<li>This interface enables users to screen resumes by uploading both job descriptions and resumes. </li>
+					</ul></li>
+				</ul></p>
+        </Section>
+		<div>
+            <Button title='Download Presentation For More Details' style='pills' class='mt-5 ' href="/presentation.pptx" download="presentation.pptx"/>
+            <Button title='Download Report For More Details' style='button' class='mt-5'  href="/IK2406_1155175846_final_report.pdf" download="IK2406_1155175846_final_report.pdf"/>
+		</div>
+	</div>
+	<a
+		href='https://github.com/srleom/astro-theme-resume.git'
+		class='mt-16 flex flex-row items-center gap-x-3 rounded-3xl border border-input px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md'
+	>
+		<span class='relative flex items-center justify-center'>
+			<span
+				class='absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75'
+			></span>
+			<span class='relative inline-flex h-2 w-2 rounded-full bg-green-400'></span>
+		</span>
+
+		<p class='font-medium'>Astro Resume Template Here</p>
+	</a>
+</PageLayout>

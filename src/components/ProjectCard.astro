@@ -37,7 +37,7 @@ if (!images[imagePath])
 		<h1 class='text-lg font-medium'>{heading}</h1>
 		<h2 class='text-muted-foreground'>{subheading}</h2>
 	
-	<div class='flex flex-col md:flex-row md:gap-x-2'>
+	<div class='flex flex-col md:flex-row md:gap-x-2, overflow-x-auto'>
 		{skills?.map((skill: string[]) => <Button as='button' title={skill} style='pill' />)}
 	</div></div>
 	<slot />
